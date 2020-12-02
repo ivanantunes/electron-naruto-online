@@ -1,0 +1,59 @@
+{
+  "name": "naruto-online",
+  "version": "1.0.0",
+  "description": "Launcher Naruto Online",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "dist:mac": "electron-builder --mac",
+    "dist:win": "electron-builder --windows",
+    "dist:linux": "electron-builder --linux",
+    "dist-all": "npm run dist:mac && npm run dist:win && npm run dist:linux"
+  },
+  "keywords": [
+    "naruto",
+    "launcher"
+  ],
+  "author": "Ivan Antunes",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^8.0.0",
+    "electron-builder": "^22.9.1"
+  },
+  "build": {
+    "productName": "Naruto-Online-Launcher",
+    "asar": false,
+    "files": [
+      "**/*",
+      "!package.json",
+      "!package-lock.json"
+    ],
+    "appId": "com.zdarks.narutoOnlineLaunche",
+    "win": {
+      "icon": "./favicon.png",
+      "target": [
+        "nsis"
+      ]
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": true
+    },
+    "mac": {
+      "icon": "./favicon.icns",
+      "target": [
+        "dmg"
+      ]
+    },
+    "linux": {
+      "category": "Utility",
+      "icon": "./favicon.png",
+      "target": [
+        "AppImage",
+        "deb",
+        "rpm"
+      ]
+    }
+  }
+}
