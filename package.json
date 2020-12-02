@@ -8,15 +8,13 @@
     "start": "electron .",
     "dist:mac": "electron-builder --mac",
     "dist:win": "electron-builder --windows",
-    "dist:linux": "electron-builder --linux",
-    "dist-all": "npm run dist:mac && npm run dist:win && npm run dist:linux"
+    "dist-all": "rm -rf dist/ && npm run dist:mac && npm run dist:win"
   },
   "keywords": [
     "naruto",
     "launcher"
   ],
   "author": "Ivan Antunes",
-  "license": "MIT",
   "devDependencies": {
     "electron": "^8.0.0",
     "electron-builder": "^22.9.1"
@@ -48,7 +46,6 @@
     },
     "linux": {
       "category": "Utility",
-      "icon": "./favicon.png",
       "target": [
         "AppImage",
         "deb",
