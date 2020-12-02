@@ -10,24 +10,46 @@
     "dist:win": "electron-builder --windows",
     "dist-all": "rm -rf dist/ && npm run dist:mac && npm run dist:win"
   },
+  
   "keywords": [
+    "naruto online",
     "naruto",
+    "online",
     "launcher"
   ],
-  "author": "Ivan Antunes",
+
+  "author": {
+    "email": "ivanantnes75@gmail.com",
+    "name": "Ivan Antunes",
+    "url": "https://github.com/ivanantunes"
+  },
+  
+  "bugs": {
+    "url": "https://github.com/ivanantunes/electron-naruto-online/issues"
+  },
+  
+  "homepage": "https://github.com/ivanantunes/electron-naruto-online#readme",
+  
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivanantunes/electron-naruto-online.git"
+  },
+
   "devDependencies": {
     "electron": "^8.0.0",
     "electron-builder": "^22.9.1"
   },
+  
   "build": {
     "productName": "Naruto-Online-Launcher",
+    "appId": "com.zdarks.naruto-online",
     "asar": false,
     "files": [
       "**/*",
       "!package.json",
       "!package-lock.json"
     ],
-    "appId": "com.zdarks.narutoOnlineLaunche",
+
     "win": {
       "icon": "./favicon.png",
       "target": [
@@ -45,11 +67,8 @@
       ]
     },
     "linux": {
-      "category": "Utility",
       "target": [
-        "AppImage",
-        "deb",
-        "rpm"
+        "deb"
       ]
     }
   }
